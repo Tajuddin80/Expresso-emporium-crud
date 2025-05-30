@@ -17,7 +17,7 @@ const Home = () => {
           Add Coffee
         </Link>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-20 w-[70%] mx-auto mt-15">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-20 w-[90%] mx-auto mt-15">
         {allCoffess.map((coffee) => (
           <PopularProducts key={coffee._id} coffee={coffee}></PopularProducts>
         ))}

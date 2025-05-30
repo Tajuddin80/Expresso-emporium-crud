@@ -32,28 +32,28 @@ const Hero = () => {
           </button>
         </div>
       </div>
-      <div className="h-40 bg-[#ECEAE3] flex justify-around py-3 items-center px-3">
+      <div className="h-auto bg-[#ECEAE3] flex gap-5 justify-around py-3 items-center px-3">
         <div className="">
-          <img src={img1} alt="" />
+          <img src={img1} className=""  alt="" />
           <h4 className="text-2xl">Awesome Aroma</h4>
           <p>
             You will definitely be a fan of the design & aroma of your coffee
           </p>
         </div>
         <div>
-          <img src={img2} alt="" />
+          <img src={img2} className="" alt="" />
           <h4 className="text-2xl"> High Quality</h4>
           <p>We served the coffee to you maintaining the best quality</p>
         </div>
         <div>
-          <img src={img3} alt="" />
+          <img src={img3} className="" alt="" />
           <h4 className="text-2xl">Pure Grades</h4>
           <p>
             The coffee is made of the green coffee beans which you will love
           </p>
         </div>
         <div>
-          <img src={img4} alt="" />
+          <img src={img4} className="" alt="" />
           <h4 className="text-2xl">Proper Roasting</h4>
           <p>Your coffee is brewed by first roasting the green coffee beans</p>
         </div>
