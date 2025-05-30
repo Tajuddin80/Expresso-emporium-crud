@@ -107,7 +107,7 @@ const AddCoffee = () => {
           />
           <label
             htmlFor="photoUrl"
-            className="text-xl peer-focus:font-medium absolute text-sm text-gray-500 bg-white px-1 duration-300 transform -translate-y-6 scale-75 top-2 left-0 z-10 origin-[0] peer-focus:start-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-2.5 peer-placeholder-shown:px-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-blue-600"
+            className="text-xl peer-focus:font-medium absolute text-gray-500 bg-white px-1 duration-300 transform -translate-y-6 scale-75 top-2 left-0 z-10 origin-[0] peer-focus:start-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-2.5 peer-placeholder-shown:px-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-blue-600"
           >
             Coffee Photo URL
           </label>

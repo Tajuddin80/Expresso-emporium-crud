@@ -53,7 +53,7 @@ const PopularProducts = ({ coffee }) => {
         >
           View
         </Link>
-        <button className="btn join-item bg-yellow-200">Edit</button>
+        <Link to={`/updateCoffee/${_id}`}  className="btn join-item bg-yellow-200">Edit</Link>
         <button
           onClick={() => handleDelete(_id)}
           className="btn join-item bg-red-200"

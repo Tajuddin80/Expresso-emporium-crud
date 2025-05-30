@@ -1,7 +1,7 @@
 import React from "react";
 
-const InputField = ({ fieldData }) => {
-  const { name, id, labelText } = fieldData;
+const UpdateCoffeeInput = ({ fieldData }) => {
+  const { name, id, labelText , defaultValue} = fieldData;
 
   return (
     <div className="relative z-0 w-full mb-5 group text-black">
@@ -11,6 +11,7 @@ const InputField = ({ fieldData }) => {
         id={id}
         className="block text-xl py-2.5 px-0 w-full  text-gray-900 bg-white border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
         placeholder=" "
+        defaultValue={defaultValue}
         required
       />
       <label
@@ -23,4 +24,4 @@ const InputField = ({ fieldData }) => {
   );
 };
 
-export default InputField;
+export default UpdateCoffeeInput;
