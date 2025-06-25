@@ -5,8 +5,6 @@ const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 3000;
 
-// username : coffeMonster
-// password : XdqrsNtQduMWMKvl
 
 app.use(cors());
 app.use(express.json());
@@ -47,7 +45,6 @@ async function run() {
     app.post("/coffees", async (req, res) => {
       const newCoffee = req.body;
       console.log(newCoffee);
-
       const result = await coffeesCollection.insertOne(newCoffee);
       res.send(result);
     });

@@ -24,8 +24,13 @@ const UpdateCoffee = () => {
   // console.log(coffee);
 
   const handleUpdateCoffee = (e) => {
-    e.preventDefault();
+    
+    e.preventDefault()
 
+    const form = e.target
+    const formData = new FormData(form)
+    const updatedCoffeeData = Object.fromEntries(formData.entries())
+    console.log(updatedCoffeeData);
     
   };
 
@@ -80,7 +85,7 @@ const UpdateCoffee = () => {
         <h1 className=" text-4xl">Update Coffee</h1>
         <p className="text-xl mb-5"></p>
       </div>
-      <form className="">
+      <form onSubmit={handleUpdateCoffee}>
         <div className="grid md:grid-cols-2 md:gap-6">
           {inputFields.map((field, index) => (
             <UpdateCoffeeInput key={index} fieldData={field} />
@@ -105,7 +110,6 @@ const UpdateCoffee = () => {
         </div>
 
         <button
-          onSubmit={handleUpdateCoffee}
           type="submit"
           className="bg-blue-600 rounded-xl w-full cursor-pointer px-4 py-2  text-white "
         >
