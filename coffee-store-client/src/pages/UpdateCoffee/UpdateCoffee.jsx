@@ -1,4 +1,4 @@
-import React from "react";
+
 import Swal from "sweetalert2";
 import UpdateCoffeeInput from "./UpdateCoffeeInput";
 import { useLoaderData } from "react-router";
@@ -12,6 +12,7 @@ import { useLoaderData } from "react-router";
 
 const UpdateCoffee = () => {
   const {
+    _id,
     coffeeName,
     coffeeChef,
     coffeeSupplier,
@@ -21,17 +22,46 @@ const UpdateCoffee = () => {
     photoUrl,
   } = useLoaderData();
 
+  console.log(coffeeName);
+  
   // console.log(coffee);
-
   const handleUpdateCoffee = (e) => {
-    
-    e.preventDefault()
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const updatedCoffee = Object.fromEntries(formData.entries());
+    console.log(updatedCoffee);
 
-    const form = e.target
-    const formData = new FormData(form)
-    const updatedCoffeeData = Object.fromEntries(formData.entries())
-    console.log(updatedCoffeeData);
-    
+    // send updated coffee to the db
+fetch(`http://localhost:3000/${_id}`, {
+  method: "PUT",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(updatedCoffee),
+})
+  .then((res) => {
+    if (!res.ok) {
+      return res.text().then(text => {
+        console.error("Server error page:", text);
+        throw new Error(`Server returned ${res.status}`);
+      });
+    }
+    return res.json();
+  })
+  .then((data) => {
+    if (data.modifiedCount) {
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Coffee updated successfully.",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+  })
+  .catch((err) => console.error("Update failed:", err));
+
   };
 
   const inputFields = [
