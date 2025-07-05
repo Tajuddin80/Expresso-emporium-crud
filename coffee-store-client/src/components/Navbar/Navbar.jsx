@@ -9,8 +9,6 @@ const links = (
   <>
     <li><NavLink className="link link-hover" to="/">Home</NavLink></li>
     <li><NavLink className="link link-hover" to="/addCoffee">Add New Coffee</NavLink></li>
-    <li><NavLink className="link link-hover" to="/updateCoffee">Update Coffee</NavLink></li>
-    <li><NavLink className="link link-hover" to="/">Item 4</NavLink></li>
   </>
 );
 
@@ -96,3 +94,5 @@ const links = (
 };
 
 export default Navbar;
+
+

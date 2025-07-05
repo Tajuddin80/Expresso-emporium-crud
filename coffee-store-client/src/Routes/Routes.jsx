@@ -5,6 +5,7 @@ import AddCoffee from "../pages/AddCoffee/AddCoffee";
 import PopularProductDetails from "../pages/PopularProductDetails/PopularProductDetails";
 import UpdateCoffee from "../pages/UpdateCoffee/UpdateCoffee";
 
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -12,7 +13,7 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        loader: () => fetch("http://localhost:3000/coffees"),
+        loader: () => fetch("https://coffee-store-server-eta-black.vercel.app/coffees"),
         Component: Home,
       },
       {
@@ -21,14 +22,22 @@ export const router = createBrowserRouter([
       },
       {
         path: `/productdetails/:id`,
-        loader: () => fetch("http://localhost:3000/coffees"),
+        loader: () => fetch("https://coffee-store-server-eta-black.vercel.app/coffees"),
         Component: PopularProductDetails,
       },
       {
         path: `/updateCoffee/:id`,
-        loader: ({ params }) => fetch(`http://localhost:3000/${params.id}`),
+        loader: ({ params }) => fetch(`https://coffee-store-server-eta-black.vercel.app/${params.id}`),
         Component: UpdateCoffee,
       },
+      // {
+      //   path: "signin",
+      //   element: <SignIn></SignIn>,
+      // },
+      // {
+      //   path: "signup",
+      //   element: <SignUp></SignUp>,
+      // },
     ],
   },
 ]);
